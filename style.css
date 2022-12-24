@@ -1,0 +1,245 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600&display=swap");
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+:root {
+  --ScissorsGradient: hsl(39, 89%, 49%);
+  --PaperGradient: hsl(230, 89%, 62%);
+  --RockGradient: hsl(349, 71%, 52%);
+  --lizardGradient: hsl(261, 73%, 60%);
+  --Cyan: hsl(189, 59%, 53%);
+  --DarkText: hsl(229, 25%, 31%);
+  --ScoreText: hsl(229, 64%, 46%);
+  --HeaderOutline: hsl(217, 16%, 45%);
+  --RadialGradient: hsl(214, 47%, 23%);
+  --white: white;
+}
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+body {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  background-color: var(--RadialGradient);
+}
+.upper-box {
+  display: flex;
+  justify-content: space-between;
+  height: 140px;
+  width: 600px;
+  border: 2px solid rgb(145, 138, 138);
+  border-radius: 8px;
+  position: absolute;
+  left: 30%;
+  top: 10%;
+}
+p {
+  color: var(--white);
+  font-size: 22px;
+  line-height: 1.3rem;
+}
+.wrap-p {
+  margin-top: 12px;
+  margin-left: 18px;
+}
+.scoreBox {
+  height: 100px;
+  width: 110px;
+  border-radius: 8px;
+  background: var(--white);
+  margin-right: 10px;
+  margin-top: 10px;
+}
+.scoreTxt {
+  color: var(--ScoreText);
+  font-size: 16px;
+  margin-left: 30px;
+  margin-top: 12px;
+  letter-spacing: 2px;
+}
+.scoreNo {
+  color: black;
+  font-size: 56px;
+  margin-top: 12px;
+  margin-left: 2.3rem;
+  opacity: 60%;
+}
+.main-div {
+  height: 450px;
+  width: 600px;
+  position: absolute;
+  left: 30%;
+  top: 40%;
+  background-image: url(images/bg-pentagon.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.iconHolder {
+  height: 140px;
+  width: 140px;
+  border-radius: 50%;
+  background: var(--white);
+}
+.iconImg {
+  filter: brightness(0), saturate(500%);
+  opacity: 2;
+  position: absolute;
+  padding-left: 23px;
+  padding-top: 24px;
+}
+#scissors {
+  box-shadow: 0px 6px hsl(39, 58%, 39%);
+  position: absolute;
+  left: 36%;
+  border: 14px solid var(--ScissorsGradient);
+}
+
+#paper {
+  border: 14px solid var(--PaperGradient);
+  box-shadow: 0px 6px hsl(230, 53%, 39%);
+  position: absolute;
+  left: 67%;
+  top: 25%;
+}
+
+#rock {
+  position: absolute;
+  left: 60%;
+  top: 70%;
+  border: 14px solid var(--RockGradient);
+  box-shadow: 0px 6px red;
+}
+#lizard {
+  position: absolute;
+  left: 18%;
+  top: 70%;
+  border: 14px solid var(--lizardGradient);
+  box-shadow: 0px 6px blueviolet;
+}
+#spock {
+  position: absolute;
+  left: 8%;
+  top: 30%;
+  border: 14px solid var(--Cyan);
+  box-shadow: 0px 6px rgb(7, 156, 156);
+}
+.rules-btn {
+    cursor: pointer;
+  width: 88px;
+  height: 35px;
+  border-radius: 10px;
+  background: var(--RadialGradient);
+  color: var(--white);
+  border: 2px solid var(--white);
+  position: absolute;
+  left: 92%;
+  top: 100%;
+}
+.rules {
+    display: none;
+  height: 450px;
+  width: 400px;
+  border-radius: 10px;
+  position: absolute;
+  left: 37.5%;
+  top: 40%;
+  background: var(--white);
+}
+.rulesImg {
+  margin-left: 15px;
+  margin-top: 45px;
+
+}
+.flexer {
+  display: flex;
+  justify-content: space-between;
+}
+.rulesTxt {
+  color: black;
+  font-size: 35px;
+  margin-top: 30px;
+  margin-left: 20px;
+  letter-spacing: -4px;
+  opacity: 0.5;
+}
+.closeIcon {
+    cursor: pointer;
+  height: 30px;
+  width: 30px;
+  margin-top: 30px;
+  margin-right: 20px;
+}

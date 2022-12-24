@@ -1,37 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Rock, Paper, Scissors</title>
-
-  Score
-  Rules
-
-  You Picked
-  The House Picked
-
-  You Win
-  You Lose
-
-  Play Again
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
-
-
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <title>Frontend Mentor | Rock, Paper, Scissors</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <!--font awesome link-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="upper-box">
+      <div class="wrap-p">
+        <p>ROCK</p>
+        <p>PAPER</p>
+        <p>SCISSORS</p>
+        <p>LIZARD</p>
+        <p>SPOCK</p>
+      </div>
+      <div class="scoreBox">
+        <p class="scoreTxt">SCORE</p>
+        <p class="scoreNo">12</p>
+      </div>
+    </div>
+    <div class="main-div">
+      <div class="iconHolder" id="scissors">
+        <img class="iconImg" src="images/icon-scissors.svg" alt="" />
+      </div>
+      <div class="iconHolder" id="paper">
+        <img class="iconImg" src="images/icon-paper.svg" alt="" />
+      </div>
+      <div class="iconHolder" id="rock">
+        <img class="iconImg" src="images/icon-rock.svg" alt="" />
+      </div>
+      <div class="iconHolder" id="lizard">
+        <img class="iconImg" src="images/icon-lizard.svg" alt="" />
+      </div>
+      <div class="iconHolder" id="spock">
+        <img class="iconImg" src="images/icon-spock.svg" alt="" />
+      </div>
+    </div>
+    <div class="rules">
+      <div class="flexer">
+        <p class="rulesTxt">RULES</p>
+        <img
+          src="images/icon-close.svg"
+          alt="the close icon image"
+          class="closeIcon"
+        />
+      </div>
+      <img
+        src="images/image-rules-bonus.svg"
+        alt="rules of the game"
+        class="rulesImg"
+      />
+    </div>
+    <button class="rules-btn">RULES</button>
+    <!-- <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Your Name Here</a>.
+    </div> -->
+  </body>
 </html>
