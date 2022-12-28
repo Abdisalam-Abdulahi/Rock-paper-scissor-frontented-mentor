@@ -218,6 +218,15 @@ p {
   border-radius: 50%;
   background: var(--white); */
 }
+.resultTxt {
+  color: var(--white);
+  font-size: 36px;
+  letter-spacing: 2px;
+  position: absolute;
+  left: 48%;
+  top: 55%;
+  display: none;
+}
 .rules-btn {
   cursor: pointer;
   width: 88px;
