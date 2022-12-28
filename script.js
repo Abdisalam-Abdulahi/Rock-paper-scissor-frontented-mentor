@@ -10,11 +10,8 @@ const mainDiv = document.querySelector(".main-div");
 const clicked = document.querySelector(".clicked");
 const computerChoice = document.querySelector(".computerChoice");
 const resultTxt = document.querySelector(".resultTxt");
-const scissorsClass = document.querySelector(".scissors");
-const paperClass = document.querySelector(".paper");
-const rockClass = document.querySelector(".rock");
-const lizardClass = document.querySelector(".lizard");
-const spockClass = document.querySelector(".spock");
+const  scoreNo =  document.querySelector(".scoreNo")
+
 rulesBtn.addEventListener("click", () => {
   rules.style.display = "block";
 });
@@ -37,22 +34,19 @@ function moveOthers(icon) {
 }
 
 const iconArray = [scissors, rock, paper, lizard, spock];
-const classesArry = [
-  scissorsClass,
-  rockClass,
-  paperClass,
-  lizardClass,
-  spockClass,
-];
+
 const clickedarr = stayer;
 const computerarr = [];
 
+console.log(computerarr);
 iconArray.forEach((item) => {
   item.addEventListener("click", () => {
     moveOthers(item);
-    randomGenarator(iconArray);
-
-    appender();
+    setTimeout(function () {
+      randomGenarator(iconArray);
+    }, 1000);
+    setTimeout(appender, 1000);
+    setTimeout(resultRevealer, 1000);
   });
 });
 
@@ -76,7 +70,6 @@ function appender() {
   const clickedId = clickedarr[0].id;
   const imgsrc = computerarr[0].children[0].src;
   if (computerId == clickedId) {
-    console.log("matched");
     const div = document.createElement("div");
     div.setAttribute("id", computerId);
     div.setAttribute("class", "iconHolder");
@@ -86,5 +79,45 @@ function appender() {
     div.style.width = "180px";
     div.style.height = "180px";
     clicked.appendChild(div);
+  }
+}
+let scoreCounter = 0
+function resultRevealer() {
+  const computerId = computerarr[0].id;
+  const clickedId = clickedarr[0].id;
+  console.log(clickedId);
+  console.log(computerId);
+  if (
+    (clickedId == "rock" && computerId == "scissors") ||
+    (clickedId == "rock" && computerId == "lizard") ||
+    (clickedId == "paper" && computerId == "rock") ||
+    (clickedId == "paper" && computerId == "spock") ||
+    (clickedId == "scissors" && computerId == "paper") ||
+    (clickedId == "scissors" && computerId == "lizard") ||
+    (clickedId == "lizard" && computerId == "paper") ||
+    (clickedId == "lizard" && computerId == "spock") ||
+    (clickedId == "spock" && computerId == "rock") ||
+    (clickedId == "spock" && computerId == "scissors")
+  ) {
+    scoreCounter++
+    scoreNo.textContent = scoreCounter
+    resultTxt.textContent = "YOU WIN";
+  } else if (
+    (clickedId == "scissors" && computerId == "rock") ||
+    (clickedId == "lizard" && computerId == "rock") ||
+    (clickedId == "rock" && computerId == "paper") ||
+    (clickedId == "spock" && computerId == "paper") ||
+    (clickedId == "paper" && computerId == "scissors") ||
+    (clickedId == "lizard" && computerId == "scissors") ||
+    (clickedId == "paper" && computerId == "lizard") ||
+    (clickedId == "spock" && computerId == "lizard") ||
+    (clickedId == "rock" && computerId == "spock") ||
+    (clickedId == "scissors" && computerId == "spock")
+  ) {
+    resultTxt.textContent = "YOU LOSE";
+    scoreCounter--
+    scoreNo.textContent = scoreCounter
+  }else{
+    resultTxt.textContent = "IT'S TIE";
   }
 }

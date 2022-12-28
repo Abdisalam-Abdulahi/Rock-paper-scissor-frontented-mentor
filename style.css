@@ -220,10 +220,10 @@ p {
 }
 .resultTxt {
   color: var(--white);
-  font-size: 36px;
+  font-size: 40px;
   letter-spacing: 2px;
   position: absolute;
-  left: 48%;
+  left: 45%;
   top: 55%;
   display: none;
 }
