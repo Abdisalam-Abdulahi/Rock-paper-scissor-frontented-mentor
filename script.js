@@ -39,9 +39,7 @@ const iconArray = [scissors, rock, paper, lizard, spock];
 
 const clickedarr = stayer;
 const computerarr = [];
-console.log(clickedarr[0])
-console.log(computerarr[0])
-
+console.log(clickedarr)
 iconArray.forEach((item) => {
   item.addEventListener("click", () => {
     moveOthers(item);
@@ -54,6 +52,8 @@ iconArray.forEach((item) => {
 });
 
 function randomGenarator(array) {
+
+  checker()
   const randomlyGenarated = Math.floor(Math.random() * array.length);
   const randomDiv = array[randomlyGenarated];
   computerarr.push(randomDiv);
@@ -64,7 +64,7 @@ function randomGenarator(array) {
   randomDiv.style.borderRadius = "50%";
   resultTxt.style.display = "block";
   placeHolder.style.display = "none";
-  againBtn.style.display = "block"
+  againBtn.style.display = "block";
   if ((resultTxt.style.display = "block")) {
     clicked.style.left = "30%";
     computerChoice.style.left = "62%";
@@ -90,8 +90,7 @@ let scoreCounter = 0;
 function resultRevealer() {
   const computerId = computerarr[0].id;
   const clickedId = clickedarr[0].id;
-  console.log(clickedId);
-  console.log(computerId);
+
   if (
     (clickedId == "rock" && computerId == "scissors") ||
     (clickedId == "rock" && computerId == "lizard") ||
@@ -125,9 +124,31 @@ function resultRevealer() {
   } else {
     resultTxt.textContent = "IT'S TIE";
   }
+  // console.log(clickedarr[0]);
+  // console.log(computerarr[0]);
 }
-againBtn.addEventListener("click",()=>{
- iconArray.forEach(item=>{
- item.style.display = "flex"
- })
-})
+againBtn.addEventListener("click", () => {
+  mainDiv.style.background = "";
+  resultTxt.style.display = "none";
+  againBtn.style.display = "none";
+  const clcikedDiv = clickedarr[0];
+  const computerDiv = computerarr[0];
+  mainDiv.appendChild(clcikedDiv);
+  mainDiv.appendChild(computerDiv);
+  computerChoice.style.display == "none"
+  clicked.style.display = "none";
+  clcikedDiv.style.width = "140px";
+  clcikedDiv.style.height = "140px";
+  computerDiv.style.width = "140px";
+  computerDiv.style.height = "140px";
+
+  iconArray.forEach((item) => {
+    item.style.display = "flex";
+  });
+});
+function checker(){
+if (computerChoice.style.display == "none" ||clicked.style.display == "none"){
+  computerChoice.style.display == "block" 
+  clicked.style.display == "block"
+}
+}
