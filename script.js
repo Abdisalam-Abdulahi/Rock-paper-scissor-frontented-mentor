@@ -48,12 +48,13 @@ iconArray.forEach((item) => {
     }, 1000);
     setTimeout(appender, 1000);
     setTimeout(resultRevealer, 1000);
+
   });
 });
 
 function randomGenarator(array) {
 
-  checker()
+  // checker()
   const randomlyGenarated = Math.floor(Math.random() * array.length);
   const randomDiv = array[randomlyGenarated];
   computerarr.push(randomDiv);
@@ -127,7 +128,9 @@ function resultRevealer() {
   // console.log(clickedarr[0]);
   // console.log(computerarr[0]);
 }
+let clicklistener = false
 againBtn.addEventListener("click", () => {
+  clicklistener = true
   mainDiv.style.background = "";
   resultTxt.style.display = "none";
   againBtn.style.display = "none";
@@ -135,8 +138,9 @@ againBtn.addEventListener("click", () => {
   const computerDiv = computerarr[0];
   mainDiv.appendChild(clcikedDiv);
   mainDiv.appendChild(computerDiv);
-  computerChoice.style.display == "none"
-  clicked.style.display = "none";
+  appender()
+  // computerChoice.style.display == "none"
+  // clicked.style.display = "none";
   clcikedDiv.style.width = "140px";
   clcikedDiv.style.height = "140px";
   computerDiv.style.width = "140px";
@@ -146,9 +150,9 @@ againBtn.addEventListener("click", () => {
     item.style.display = "flex";
   });
 });
-function checker(){
-if (computerChoice.style.display == "none" ||clicked.style.display == "none"){
-  computerChoice.style.display == "block" 
-  clicked.style.display == "block"
-}
-}
+// function checker(){
+// if (computerChoice.style.display == "none" ||clicked.style.display == "none"){
+//   computerChoice.style.display == "block" 
+//   clicked.style.display == "block"
+// }
+// }
