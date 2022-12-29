@@ -213,19 +213,34 @@ p {
   position: absolute;
   left: 60%;
   top: 50%;
-  /* height: 140px;
-  width: 140px;
-  border-radius: 50%;
-  background: var(--white); */
 }
 .resultTxt {
   color: var(--white);
   font-size: 40px;
   letter-spacing: 2px;
   position: absolute;
-  left: 45%;
+  left: 47%;
   top: 55%;
   display: none;
+}
+#positionHolder {
+  display: none;
+  background: rgb(123, 107, 107);
+  position: absolute;
+  left: 62%;
+  top: 50%;
+  width: 180px;
+  height: 180px;
+}
+.againBtn{
+  display: none;
+  position: absolute;
+  left: 47%;
+  top: 65%;
+  width: 160px;
+  height: 37px;
+  border-radius: 10px;
+  border-style: none;
 }
 .rules-btn {
   cursor: pointer;

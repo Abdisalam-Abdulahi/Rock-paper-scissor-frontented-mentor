@@ -10,8 +10,9 @@ const mainDiv = document.querySelector(".main-div");
 const clicked = document.querySelector(".clicked");
 const computerChoice = document.querySelector(".computerChoice");
 const resultTxt = document.querySelector(".resultTxt");
-const  scoreNo =  document.querySelector(".scoreNo")
-
+const scoreNo = document.querySelector(".scoreNo");
+const placeHolder = document.querySelector("#positionHolder");
+const againBtn = document.querySelector(".againBtn");
 rulesBtn.addEventListener("click", () => {
   rules.style.display = "block";
 });
@@ -29,6 +30,7 @@ function moveOthers(icon) {
       icon.style.height = "180px";
       icon.style.width = "180px";
       clicked.appendChild(icon);
+      placeHolder.style.display = "block";
     }
   });
 }
@@ -37,8 +39,9 @@ const iconArray = [scissors, rock, paper, lizard, spock];
 
 const clickedarr = stayer;
 const computerarr = [];
+console.log(clickedarr[0])
+console.log(computerarr[0])
 
-console.log(computerarr);
 iconArray.forEach((item) => {
   item.addEventListener("click", () => {
     moveOthers(item);
@@ -60,6 +63,8 @@ function randomGenarator(array) {
   randomDiv.style.height = "180px";
   randomDiv.style.borderRadius = "50%";
   resultTxt.style.display = "block";
+  placeHolder.style.display = "none";
+  againBtn.style.display = "block"
   if ((resultTxt.style.display = "block")) {
     clicked.style.left = "30%";
     computerChoice.style.left = "62%";
@@ -81,7 +86,7 @@ function appender() {
     clicked.appendChild(div);
   }
 }
-let scoreCounter = 0
+let scoreCounter = 0;
 function resultRevealer() {
   const computerId = computerarr[0].id;
   const clickedId = clickedarr[0].id;
@@ -99,8 +104,8 @@ function resultRevealer() {
     (clickedId == "spock" && computerId == "rock") ||
     (clickedId == "spock" && computerId == "scissors")
   ) {
-    scoreCounter++
-    scoreNo.textContent = scoreCounter
+    scoreCounter++;
+    scoreNo.textContent = scoreCounter;
     resultTxt.textContent = "YOU WIN";
   } else if (
     (clickedId == "scissors" && computerId == "rock") ||
@@ -115,9 +120,14 @@ function resultRevealer() {
     (clickedId == "scissors" && computerId == "spock")
   ) {
     resultTxt.textContent = "YOU LOSE";
-    scoreCounter--
-    scoreNo.textContent = scoreCounter
-  }else{
+    scoreCounter--;
+    scoreNo.textContent = scoreCounter;
+  } else {
     resultTxt.textContent = "IT'S TIE";
   }
 }
+againBtn.addEventListener("click",()=>{
+ iconArray.forEach(item=>{
+ item.style.display = "flex"
+ })
+})
