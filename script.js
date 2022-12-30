@@ -32,6 +32,9 @@ function moveOthers(icon) {
       clicked.appendChild(icon);
       placeHolder.style.display = "block";
     }
+    if ((Element.style.display == "flex")) {
+      Element.style.display = "none";
+    }
   });
 }
 
@@ -39,7 +42,7 @@ const iconArray = [scissors, rock, paper, lizard, spock];
 
 const clickedarr = stayer;
 const computerarr = [];
-console.log(clickedarr)
+
 iconArray.forEach((item) => {
   item.addEventListener("click", () => {
     moveOthers(item);
@@ -48,12 +51,10 @@ iconArray.forEach((item) => {
     }, 1000);
     setTimeout(appender, 1000);
     setTimeout(resultRevealer, 1000);
-
   });
 });
 
 function randomGenarator(array) {
-
   // checker()
   const randomlyGenarated = Math.floor(Math.random() * array.length);
   const randomDiv = array[randomlyGenarated];
@@ -91,7 +92,8 @@ let scoreCounter = 0;
 function resultRevealer() {
   const computerId = computerarr[0].id;
   const clickedId = clickedarr[0].id;
-
+  //  console.log(computerarr[0])
+  //  console.log(clickedarr[0])
   if (
     (clickedId == "rock" && computerId == "scissors") ||
     (clickedId == "rock" && computerId == "lizard") ||
@@ -128,9 +130,9 @@ function resultRevealer() {
   // console.log(clickedarr[0]);
   // console.log(computerarr[0]);
 }
-let clicklistener = false
+
 againBtn.addEventListener("click", () => {
-  clicklistener = true
+  randomGenarator(iconArray);
   mainDiv.style.background = "";
   resultTxt.style.display = "none";
   againBtn.style.display = "none";
@@ -138,21 +140,46 @@ againBtn.addEventListener("click", () => {
   const computerDiv = computerarr[0];
   mainDiv.appendChild(clcikedDiv);
   mainDiv.appendChild(computerDiv);
-  appender()
-  // computerChoice.style.display == "none"
-  // clicked.style.display = "none";
   clcikedDiv.style.width = "140px";
   clcikedDiv.style.height = "140px";
   computerDiv.style.width = "140px";
   computerDiv.style.height = "140px";
-
+  if (computerChoice.hasChildNodes()) {
+    console.log("computer available");
+    const child = computerChoice.children[0];
+    child.style.width = "140px";
+    child.style.height = "140px";
+    mainDiv.appendChild(child);
+    console.log(child);
+  }
+  if (clicked.hasChildNodes()) {
+    console.log("clicked available");
+    const child = clicked.children[0];
+    child.style.width = "140px";
+    child.style.height = "140px";
+    mainDiv.append(child);
+  }
   iconArray.forEach((item) => {
     item.style.display = "flex";
   });
 });
+// function mainDivAppender() {
+//   const computerId = computerarr[0].id;
+//   const clickedId = clickedarr[0].id;
+//   const imgsrc = computerarr[0].children[0].src;
+//   const div = document.createElement("div");
+//   div.setAttribute("id", computerId);
+//   div.setAttribute("class", "iconHolder");
+//   const img = document.createElement("img");
+//   img.setAttribute("src", imgsrc);
+//   div.appendChild(img);
+//   div.style.width = "180px";
+//   div.style.height = "180px";
+//   mainDiv.appendChild(div);
+// }
 // function checker(){
 // if (computerChoice.style.display == "none" ||clicked.style.display == "none"){
-//   computerChoice.style.display == "block" 
+//   computerChoice.style.display == "block"
 //   clicked.style.display == "block"
 // }
 // }
