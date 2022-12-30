@@ -19,7 +19,7 @@ rulesBtn.addEventListener("click", () => {
 closeIcon.addEventListener("click", () => {
   rules.style.display = "none";
 });
-
+let clicklistener;
 const stayer = [];
 function moveOthers(icon) {
   stayer.push(icon);
@@ -32,9 +32,10 @@ function moveOthers(icon) {
       clicked.appendChild(icon);
       placeHolder.style.display = "block";
     }
-    if ((Element.style.display == "flex")) {
+    if (Element.style.display == "flex") {
       Element.style.display = "none";
     }
+    icon.style.display = "flex";
   });
 }
 
@@ -130,8 +131,10 @@ function resultRevealer() {
   // console.log(clickedarr[0]);
   // console.log(computerarr[0]);
 }
-
 againBtn.addEventListener("click", () => {
+  clicklistener = true;
+  console.log(clicklistener);
+
   randomGenarator(iconArray);
   mainDiv.style.background = "";
   resultTxt.style.display = "none";
@@ -144,42 +147,20 @@ againBtn.addEventListener("click", () => {
   clcikedDiv.style.height = "140px";
   computerDiv.style.width = "140px";
   computerDiv.style.height = "140px";
-  if (computerChoice.hasChildNodes()) {
-    console.log("computer available");
-    const child = computerChoice.children[0];
+  if (computerChoice.firstChild) {
+    //console.log(computerChoice.firstChild);
+    const child = computerChoice.firstChild;
     child.style.width = "140px";
     child.style.height = "140px";
     mainDiv.appendChild(child);
-    console.log(child);
   }
-  if (clicked.hasChildNodes()) {
-    console.log("clicked available");
-    const child = clicked.children[0];
+  if (clicked.firstChild) {
+    const child = clicked.firstChild;
     child.style.width = "140px";
     child.style.height = "140px";
-    mainDiv.append(child);
+    mainDiv.appendChild(child);
   }
   iconArray.forEach((item) => {
     item.style.display = "flex";
   });
 });
-// function mainDivAppender() {
-//   const computerId = computerarr[0].id;
-//   const clickedId = clickedarr[0].id;
-//   const imgsrc = computerarr[0].children[0].src;
-//   const div = document.createElement("div");
-//   div.setAttribute("id", computerId);
-//   div.setAttribute("class", "iconHolder");
-//   const img = document.createElement("img");
-//   img.setAttribute("src", imgsrc);
-//   div.appendChild(img);
-//   div.style.width = "180px";
-//   div.style.height = "180px";
-//   mainDiv.appendChild(div);
-// }
-// function checker(){
-// if (computerChoice.style.display == "none" ||clicked.style.display == "none"){
-//   computerChoice.style.display == "block"
-//   clicked.style.display == "block"
-// }
-// }
