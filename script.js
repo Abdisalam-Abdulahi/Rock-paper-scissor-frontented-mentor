@@ -29,28 +29,28 @@ function moveOthers(icon) {
       mainDiv.style.background = "var(--RadialGradient)";
       icon.style.height = "180px";
       icon.style.width = "180px";
-      clicked.appendChild(icon);
+      
+      icon.style.display ="none"
+    
       placeHolder.style.display = "block";
     }
-    if (Element.style.display == "flex") {
-      Element.style.display = "none";
-    }
-    icon.style.display = "flex";
+ 
   });
+  clickappendrr()
 }
 
-const iconArray = [scissors, rock, paper, lizard, spock];
+let iconArray = [scissors, rock, paper, lizard, spock];
 
 const clickedarr = stayer;
 const computerarr = [];
-
+console.log(clickedarr[0])
 iconArray.forEach((item) => {
   item.addEventListener("click", () => {
     moveOthers(item);
     setTimeout(function () {
       randomGenarator(iconArray);
     }, 1000);
-    setTimeout(appender, 1000);
+   
     setTimeout(resultRevealer, 1000);
   });
 });
@@ -60,8 +60,9 @@ function randomGenarator(array) {
   const randomlyGenarated = Math.floor(Math.random() * array.length);
   const randomDiv = array[randomlyGenarated];
   computerarr.push(randomDiv);
-  randomDiv.style.display = "flex";
-  computerChoice.appendChild(randomDiv);
+  randomDiv.style.display = "none";
+  // computerChoice.appendChild(randomDiv);
+  computerappendrr()
   randomDiv.style.width = "180px";
   randomDiv.style.height = "180px";
   randomDiv.style.borderRadius = "50%";
@@ -73,21 +74,33 @@ function randomGenarator(array) {
     computerChoice.style.left = "62%";
   }
 }
-function appender() {
-  const computerId = computerarr[0].id;
+
+function clickappendrr(){
+
   const clickedId = clickedarr[0].id;
+  const imgsrc = clickedarr[0].children[0].src;
+  const div = document.createElement("div");
+  div.setAttribute("id", clickedId);
+  div.setAttribute("class", "iconHolder");
+  const img = document.createElement("img");
+  img.setAttribute("src", imgsrc);
+  div.appendChild(img);
+  div.style.width = "180px";
+  div.style.height = "180px";
+  clicked.appendChild(div);
+}
+function computerappendrr(){
+  const computerId = computerarr[0].id;
   const imgsrc = computerarr[0].children[0].src;
-  if (computerId == clickedId) {
-    const div = document.createElement("div");
-    div.setAttribute("id", computerId);
-    div.setAttribute("class", "iconHolder");
-    const img = document.createElement("img");
-    img.setAttribute("src", imgsrc);
-    div.appendChild(img);
-    div.style.width = "180px";
-    div.style.height = "180px";
-    clicked.appendChild(div);
-  }
+  const div = document.createElement("div");
+  div.setAttribute("id", computerId);
+  div.setAttribute("class", "iconHolder");
+  const img = document.createElement("img");
+  img.setAttribute("src", imgsrc);
+  div.appendChild(img);
+  div.style.width = "180px";
+  div.style.height = "180px";
+  computerChoice.appendChild(div);
 }
 let scoreCounter = 0;
 function resultRevealer() {
@@ -131,36 +144,5 @@ function resultRevealer() {
   // console.log(clickedarr[0]);
   // console.log(computerarr[0]);
 }
-againBtn.addEventListener("click", () => {
-  clicklistener = true;
-  console.log(clicklistener);
 
-  randomGenarator(iconArray);
-  mainDiv.style.background = "";
-  resultTxt.style.display = "none";
-  againBtn.style.display = "none";
-  const clcikedDiv = clickedarr[0];
-  const computerDiv = computerarr[0];
-  mainDiv.appendChild(clcikedDiv);
-  mainDiv.appendChild(computerDiv);
-  clcikedDiv.style.width = "140px";
-  clcikedDiv.style.height = "140px";
-  computerDiv.style.width = "140px";
-  computerDiv.style.height = "140px";
-  if (computerChoice.firstChild) {
-    //console.log(computerChoice.firstChild);
-    const child = computerChoice.firstChild;
-    child.style.width = "140px";
-    child.style.height = "140px";
-    mainDiv.appendChild(child);
-  }
-  if (clicked.firstChild) {
-    const child = clicked.firstChild;
-    child.style.width = "140px";
-    child.style.height = "140px";
-    mainDiv.appendChild(child);
-  }
-  iconArray.forEach((item) => {
-    item.style.display = "flex";
-  });
-});
+
