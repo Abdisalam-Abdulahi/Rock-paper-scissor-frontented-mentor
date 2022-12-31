@@ -29,28 +29,25 @@ function moveOthers(icon) {
       mainDiv.style.background = "var(--RadialGradient)";
       icon.style.height = "180px";
       icon.style.width = "180px";
-      
-      icon.style.display ="none"
-    
+      icon.style.display = "none";
       placeHolder.style.display = "block";
     }
- 
   });
-  clickappendrr()
+  clickappendrr();
 }
 
 let iconArray = [scissors, rock, paper, lizard, spock];
 
 const clickedarr = stayer;
 const computerarr = [];
-console.log(clickedarr[0])
+
 iconArray.forEach((item) => {
   item.addEventListener("click", () => {
     moveOthers(item);
     setTimeout(function () {
       randomGenarator(iconArray);
     }, 1000);
-   
+
     setTimeout(resultRevealer, 1000);
   });
 });
@@ -62,7 +59,7 @@ function randomGenarator(array) {
   computerarr.push(randomDiv);
   randomDiv.style.display = "none";
   // computerChoice.appendChild(randomDiv);
-  computerappendrr()
+  computerappendrr();
   randomDiv.style.width = "180px";
   randomDiv.style.height = "180px";
   randomDiv.style.borderRadius = "50%";
@@ -75,8 +72,7 @@ function randomGenarator(array) {
   }
 }
 
-function clickappendrr(){
-
+function clickappendrr() {
   const clickedId = clickedarr[0].id;
   const imgsrc = clickedarr[0].children[0].src;
   const div = document.createElement("div");
@@ -89,7 +85,7 @@ function clickappendrr(){
   div.style.height = "180px";
   clicked.appendChild(div);
 }
-function computerappendrr(){
+function computerappendrr() {
   const computerId = computerarr[0].id;
   const imgsrc = computerarr[0].children[0].src;
   const div = document.createElement("div");
@@ -144,5 +140,22 @@ function resultRevealer() {
   // console.log(clickedarr[0]);
   // console.log(computerarr[0]);
 }
-
-
+let cliclistener;
+againBtn.addEventListener("click", () => {
+  clicklistener = true;
+  stayer.shift()
+  const clickedChild = clicked.children[0];
+  const computerChild = computerChoice.children[0];
+  clicked.removeChild(clickedChild);
+  computerChoice.removeChild(computerChild);
+  resultTxt.style.display = "none";
+  againBtn.style.display = "none";
+  mainDiv.style.background = "";
+  iconArray.forEach((item) => {
+    item.style.display = "flex";
+    item.style.width = "140px";
+    item.style.height = "140px";
+    console.log(stayer)
+  });
+ 
+});
