@@ -13,6 +13,8 @@ const resultTxt = document.querySelector(".resultTxt");
 const scoreNo = document.querySelector(".scoreNo");
 const placeHolder = document.querySelector("#positionHolder");
 const againBtn = document.querySelector(".againBtn");
+const click = document.getElementById("click");
+const computer = document.getElementById("computer");
 rulesBtn.addEventListener("click", () => {
   rules.style.display = "block";
 });
@@ -53,12 +55,10 @@ iconArray.forEach((item) => {
 });
 
 function randomGenarator(array) {
-  // checker()
   const randomlyGenarated = Math.floor(Math.random() * array.length);
   const randomDiv = array[randomlyGenarated];
   computerarr.push(randomDiv);
   randomDiv.style.display = "none";
-  // computerChoice.appendChild(randomDiv);
   computerappendrr();
   randomDiv.style.width = "180px";
   randomDiv.style.height = "180px";
@@ -71,7 +71,6 @@ function randomGenarator(array) {
     computerChoice.style.left = "62%";
   }
 }
-
 function clickappendrr() {
   const clickedId = clickedarr[0].id;
   const imgsrc = clickedarr[0].children[0].src;
@@ -80,9 +79,11 @@ function clickappendrr() {
   div.setAttribute("class", "iconHolder");
   const img = document.createElement("img");
   img.setAttribute("src", imgsrc);
+  img.setAttribute("class", "icon");
+  resizer(img);
   div.appendChild(img);
-  div.style.width = "180px";
-  div.style.height = "180px";
+  div.style.width = "200px";
+  div.style.height = "200px";
   clicked.appendChild(div);
 }
 function computerappendrr() {
@@ -93,10 +94,16 @@ function computerappendrr() {
   div.setAttribute("class", "iconHolder");
   const img = document.createElement("img");
   img.setAttribute("src", imgsrc);
+  img.setAttribute("class", "icon");
+  resizer(img);
   div.appendChild(img);
-  div.style.width = "180px";
-  div.style.height = "180px";
+  div.style.width = "200px";
+  div.style.height = "200px";
   computerChoice.appendChild(div);
+}
+function resizer(image) {
+  image.style.width = "70px";
+  image.style.height = "80px";
 }
 let scoreCounter = 0;
 function resultRevealer() {
@@ -119,6 +126,7 @@ function resultRevealer() {
     scoreCounter++;
     scoreNo.textContent = scoreCounter;
     resultTxt.textContent = "YOU WIN";
+    click.style.display = "block"
   } else if (
     (clickedId == "scissors" && computerId == "rock") ||
     (clickedId == "lizard" && computerId == "rock") ||
@@ -134,16 +142,17 @@ function resultRevealer() {
     resultTxt.textContent = "YOU LOSE";
     scoreCounter--;
     scoreNo.textContent = scoreCounter;
+    computer.style.display = "block"
   } else {
     resultTxt.textContent = "IT'S TIE";
+    click.style.display = "none"
+    computer.style.display = "none"
   }
-  // console.log(clickedarr[0]);
-  // console.log(computerarr[0]);
+
 }
-let cliclistener;
+
 againBtn.addEventListener("click", () => {
-  clicklistener = true;
-  stayer.shift()
+  stayer.shift();
   const clickedChild = clicked.children[0];
   const computerChild = computerChoice.children[0];
   clicked.removeChild(clickedChild);
@@ -155,7 +164,7 @@ againBtn.addEventListener("click", () => {
     item.style.display = "flex";
     item.style.width = "140px";
     item.style.height = "140px";
-    console.log(stayer)
   });
- 
+  click.style.display = "none"
+  computer.style.display = "none"
 });

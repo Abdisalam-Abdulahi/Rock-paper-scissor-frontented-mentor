@@ -158,25 +158,44 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
+  /* outline: 25px solid red; */
 }
+/* size pseudo within from coordonates */
+/* .iconHolder:before {
+  content:"";
+  top:-39px;
+  left:-42px;
+  right:-42px;
+  bottom:-62px;
+  border: green 2px solid;
+  position: absolute;
+  border-radius: 50%;
+}
+.iconHolder:after {
+  content:"";
+  top:-40px;
+  left:-44px;
+  right:-44px;
+  bottom:-64px;
+  border: red 2px solid;
+  position: absolute;
+  border-radius: 50%;
+} */
 .iconImg {
-  height: 70px;
-  width: 60px;
+  height: 50px;
+  width: 40px;
   filter: brightness(0), saturate(500%);
   opacity: 2;
-  /* position: absolute;
-  padding-left: 23px;
-  padding-top: 24px; */
 }
 #scissors {
   box-shadow: 0px 6px hsl(39, 58%, 39%);
   position: absolute;
   left: 36%;
-  border: 14px solid var(--ScissorsGradient);
+  border: 17px solid var(--ScissorsGradient);
 }
 
 #paper {
-  border: 14px solid var(--PaperGradient);
+  border: 17px solid var(--PaperGradient);
   box-shadow: 0px 6px hsl(230, 53%, 39%);
   position: absolute;
   left: 60%;
@@ -187,23 +206,68 @@ p {
   position: absolute;
   left: 60%;
   top: 70%;
-  border: 14px solid var(--RockGradient);
+  border: 17px solid var(--RockGradient);
   box-shadow: 0px 6px red;
 }
 #lizard {
   position: absolute;
   left: 18%;
   top: 70%;
-  border: 14px solid var(--lizardGradient);
+  border: 17px solid var(--lizardGradient);
   box-shadow: 0px 6px blueviolet;
 }
 #spock {
   position: absolute;
   left: 8%;
   top: 30%;
-  border: 14px solid var(--Cyan);
+  border: 17px solid var(--Cyan);
   box-shadow: 0px 6px rgb(7, 156, 156);
 }
+#click {
+  display: none;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  position: absolute;
+  left: 30%;
+  top: 50%;
+  outline: 45px solid var(--HeaderOutline);
+  opacity: 80%;
+}
+#computer {
+  display: none;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  position: absolute;
+  left: 62%;
+  top: 50%;
+  outline: 45px solid var(--HeaderOutline);
+  opacity: 80%;
+}
+.shadow:before {
+  content: "";
+  top: -75px;
+  left: -75px;
+  right: -75px;
+  bottom: -75px;
+  border: hsl(220, 6%, 60%) 35px solid;
+  position: absolute;
+  border-radius: 50%;
+  opacity: 20%;
+}
+.shadow:after {
+  content: "";
+  top: -100px;
+  left: -100px;
+  right: -100px;
+  bottom: -100px;
+  border: hsl(240, 1%, 34%) 35px solid;
+  position: absolute;
+  border-radius: 50%;
+  opacity: 20%;
+}
+
 .clicked {
   position: absolute;
   left: 33%;
@@ -232,7 +296,7 @@ p {
   width: 180px;
   height: 180px;
 }
-.againBtn{
+.againBtn {
   display: none;
   position: absolute;
   left: 47%;
