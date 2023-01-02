@@ -67,8 +67,8 @@ function randomGenarator(array) {
   placeHolder.style.display = "none";
   againBtn.style.display = "block";
   if ((resultTxt.style.display = "block")) {
-    clicked.style.left = "30%";
-    computerChoice.style.left = "62%";
+    clicked.style.left = "28%";
+    computerChoice.style.left = "64%";
   }
 }
 function clickappendrr() {

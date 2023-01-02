@@ -229,7 +229,7 @@ p {
   width: 200px;
   border-radius: 50%;
   position: absolute;
-  left: 30%;
+  left: 28%;
   top: 50%;
   outline: 45px solid var(--HeaderOutline);
   opacity: 80%;
@@ -240,7 +240,7 @@ p {
   width: 200px;
   border-radius: 50%;
   position: absolute;
-  left: 62%;
+  left: 64%;
   top: 50%;
   outline: 45px solid var(--HeaderOutline);
   opacity: 80%;
