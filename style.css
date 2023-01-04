@@ -158,34 +158,17 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* outline: 25px solid red; */
+  transition:  10ms ease-out;
 }
-/* size pseudo within from coordonates */
-/* .iconHolder:before {
-  content:"";
-  top:-39px;
-  left:-42px;
-  right:-42px;
-  bottom:-62px;
-  border: green 2px solid;
-  position: absolute;
-  border-radius: 50%;
-}
-.iconHolder:after {
-  content:"";
-  top:-40px;
-  left:-44px;
-  right:-44px;
-  bottom:-64px;
-  border: red 2px solid;
-  position: absolute;
-  border-radius: 50%;
-} */
 .iconImg {
   height: 50px;
   width: 40px;
   filter: brightness(0), saturate(500%);
   opacity: 2;
+}
+.iconHolder:hover{
+  height: 145px;
+  width: 145px;
 }
 #scissors {
   box-shadow: 0px 6px hsl(39, 58%, 39%);
