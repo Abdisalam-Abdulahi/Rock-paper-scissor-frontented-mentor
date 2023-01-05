@@ -139,7 +139,6 @@ p {
   opacity: 60%;
 }
 .main-div {
-  /* display: none; */
   height: 450px;
   width: 600px;
   position: absolute;
@@ -330,4 +329,59 @@ p {
   width: 30px;
   margin-top: 30px;
   margin-right: 20px;
+}
+@media only screen and (max-width: 575.98px) {
+  body {
+    width: 375px;
+    height: 100%;
+    position: absolute;
+  }
+  .upper-box {
+    left: 7%;
+    height: 120px;
+    width: 400px;
+  }
+  p {
+    font-size: 16px;
+    line-height: 1rem;
+  }
+  .scoreBox {
+    height: 80px;
+    width: 90px;
+    margin-top: 15px;
+  }
+  .scoreTxt {
+    font-size: 15px;
+    margin-left: 23px;
+  }
+  .scoreNo {
+    font-size: 36px;
+    opacity: 60%;
+  }
+  .iconHolder {
+    height: 120px;
+    width: 120px;
+  
+  }
+  .main-div {
+    width: 460px;
+    left: 0%;
+    background-size: 300px;
+   }
+   .rules-btn{
+    left: 50%;
+    top: 120%;
+   }
+   .rules{
+   height: 500px;
+   width: 100%;
+   left: 15%;
+   top: 10%;
+   }
+}
+/* this style applies on width between 576.98px and 767.98px  */
+@media only screen and (max-width: 767.98px) and (min-width: 576.98px) {
+  body {
+    background-color: yellowgreen;
+  }
 }
