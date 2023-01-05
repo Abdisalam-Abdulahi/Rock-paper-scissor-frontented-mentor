@@ -158,7 +158,7 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition:  10ms ease-out;
+  
 }
 .iconImg {
   height: 50px;
@@ -166,10 +166,7 @@ p {
   filter: brightness(0), saturate(500%);
   opacity: 2;
 }
-.iconHolder:hover{
-  height: 145px;
-  width: 145px;
-}
+
 #scissors {
   box-shadow: 0px 6px hsl(39, 58%, 39%);
   position: absolute;
