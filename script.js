@@ -13,8 +13,9 @@ const resultTxt = document.querySelector(".resultTxt");
 const scoreNo = document.querySelector(".scoreNo");
 const placeHolder = document.querySelector("#positionHolder");
 const againBtn = document.querySelector(".againBtn");
-const click = document.getElementById("click");
-const computer = document.getElementById("computer");
+const click = document.getElementById("clickShadow");
+const computer = document.getElementById("computerShadow");
+
 rulesBtn.addEventListener("click", () => {
   rules.style.display = "block";
 });
@@ -69,6 +70,20 @@ function randomGenarator(array) {
   if ((resultTxt.style.display = "block")) {
     clicked.style.left = "28%";
     computerChoice.style.left = "64%";
+    const mediaQuery = window.matchMedia("(max-width: 768px)");
+    function handleTabletChange(e) {
+      if (e.matches) {
+        clicked.style.left = "15%";
+        computerChoice.style.left = "80%";
+        computer.style.left= "93%"
+      } else {
+        clicked.style.left = "28%";
+        computerChoice.style.left = "64%";
+        computer.style.left= "64%"
+      }
+    }
+    mediaQuery.addListener(handleTabletChange);
+    handleTabletChange(mediaQuery);
   }
 }
 function clickappendrr() {
@@ -85,6 +100,7 @@ function clickappendrr() {
   div.style.width = "200px";
   div.style.height = "200px";
   clicked.appendChild(div);
+  makeItResponsive(div, img);
 }
 function computerappendrr() {
   const computerId = computerarr[0].id;
@@ -100,6 +116,24 @@ function computerappendrr() {
   div.style.width = "200px";
   div.style.height = "200px";
   computerChoice.appendChild(div);
+  makeItResponsive(div, img);
+}
+function makeItResponsive(div, img) {
+  const mediaQuery = window.matchMedia("(max-width: 768px)");
+  function handleTabletChange(e) {
+    if (e.matches) {
+      div.style.height = "180px";
+      div.style.width = "180px";
+      img.style.height = "80px";
+      img.style.width = "70px";
+    } else {
+      div.style.height = "200px";
+      div.style.width = "200px";
+      resizer(img);
+    }
+  }
+  mediaQuery.addListener(handleTabletChange);
+  handleTabletChange(mediaQuery);
 }
 function resizer(image) {
   image.style.width = "70px";
@@ -173,12 +207,9 @@ againBtn.addEventListener("click", () => {
         item.style.height = "140px";
       }
     }
-      mediaQuery.addListener(handleTabletChange);
-      handleTabletChange(mediaQuery);
+    mediaQuery.addListener(handleTabletChange);
+    handleTabletChange(mediaQuery);
   });
   click.style.display = "none";
   computer.style.display = "none";
-  
-
-
 });
