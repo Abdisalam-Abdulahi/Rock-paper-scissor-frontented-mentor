@@ -126,7 +126,7 @@ function resultRevealer() {
     scoreCounter++;
     scoreNo.textContent = scoreCounter;
     resultTxt.textContent = "YOU WIN";
-    click.style.display = "block"
+    click.style.display = "block";
   } else if (
     (clickedId == "scissors" && computerId == "rock") ||
     (clickedId == "lizard" && computerId == "rock") ||
@@ -142,13 +142,12 @@ function resultRevealer() {
     resultTxt.textContent = "YOU LOSE";
     scoreCounter--;
     scoreNo.textContent = scoreCounter;
-    computer.style.display = "block"
+    computer.style.display = "block";
   } else {
     resultTxt.textContent = "IT'S TIE";
-    click.style.display = "none"
-    computer.style.display = "none"
+    click.style.display = "none";
+    computer.style.display = "none";
   }
-
 }
 
 againBtn.addEventListener("click", () => {
@@ -164,7 +163,22 @@ againBtn.addEventListener("click", () => {
     item.style.display = "flex";
     item.style.width = "140px";
     item.style.height = "140px";
+    const mediaQuery = window.matchMedia("(max-width: 768px)");
+    function handleTabletChange(e) {
+      if (e.matches) {
+        item.style.width = "120px";
+        item.style.height = "120px";
+      } else {
+        item.style.width = "140px";
+        item.style.height = "140px";
+      }
+    }
+      mediaQuery.addListener(handleTabletChange);
+      handleTabletChange(mediaQuery);
   });
-  click.style.display = "none"
-  computer.style.display = "none"
+  click.style.display = "none";
+  computer.style.display = "none";
+  
+
+
 });
