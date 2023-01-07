@@ -186,6 +186,7 @@ function resultRevealer() {
 
 againBtn.addEventListener("click", () => {
   stayer.shift();
+  computerarr.shift()
   const clickedChild = clicked.children[0];
   const computerChild = computerChoice.children[0];
   clicked.removeChild(clickedChild);
