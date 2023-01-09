@@ -421,13 +421,13 @@ p {
     position: absolute;
   }
   .upper-box {
-    left: 7%;
+    left: 30%;
     height: 120px;
-    width: 400px;
+    width: 460px;
   }
   p {
-    font-size: 16px;
-    line-height: 1rem;
+    font-size: 20px;
+    line-height: 1.1rem;
   }
   .scoreBox {
     height: 80px;
@@ -448,7 +448,7 @@ p {
   }
   .main-div {
     width: 460px;
-    left: 0%;
+    left: 30%;
     background-size: 300px;
   }
   #computerShadow {
@@ -480,13 +480,13 @@ p {
     opacity: 30%;
   }
   .rules-btn {
-    left: 50%;
-    top: 108%;
+    left: 75%;
+    top: 115%;
   }
   .rules {
-    height: 500px;
-    width: 100%;
-    left: 15%;
+    height: 450px;
+    width: 400px;
+    left: 40%;
     top: 10%;
   }
   .resultTxt {

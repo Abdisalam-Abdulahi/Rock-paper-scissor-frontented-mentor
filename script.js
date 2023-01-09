@@ -214,3 +214,18 @@ againBtn.addEventListener("click", () => {
   click.style.display = "none";
   computer.style.display = "none";
 });
+
+const mediaQuery = window.matchMedia("(max-width: 768px)");
+function handleTabletChange(e) {
+  if (e.matches) {
+    clicked.style.left = "15%";
+    computerChoice.style.left = "80%";
+    computer.style.left= "93%"
+  } else {
+    clicked.style.left = "28%";
+    computerChoice.style.left = "64%";
+    computer.style.left= "64%"
+  }
+}
+mediaQuery.addListener(handleTabletChange);
+handleTabletChange(mediaQuery);
