@@ -75,15 +75,17 @@ function randomGenarator(array) {
       if (e.matches) {
         clicked.style.left = "15%";
         computerChoice.style.left = "80%";
-        computer.style.left= "93%"
+        //this computer shadow
+        computer.style.left = "93%";
       } else {
         clicked.style.left = "28%";
         computerChoice.style.left = "64%";
-        computer.style.left= "64%"
+        computer.style.left = "64%";
       }
     }
     mediaQuery.addListener(handleTabletChange);
     handleTabletChange(mediaQuery);
+
   }
 }
 function clickappendrr() {
@@ -143,8 +145,7 @@ let scoreCounter = 0;
 function resultRevealer() {
   const computerId = computerarr[0].id;
   const clickedId = clickedarr[0].id;
-  //  console.log(computerarr[0])
-  //  console.log(clickedarr[0])
+
   if (
     (clickedId == "rock" && computerId == "scissors") ||
     (clickedId == "rock" && computerId == "lizard") ||
@@ -186,7 +187,7 @@ function resultRevealer() {
 
 againBtn.addEventListener("click", () => {
   stayer.shift();
-  computerarr.shift()
+  computerarr.shift();
   const clickedChild = clicked.children[0];
   const computerChild = computerChoice.children[0];
   clicked.removeChild(clickedChild);
@@ -215,17 +216,3 @@ againBtn.addEventListener("click", () => {
   computer.style.display = "none";
 });
 
-const mediaQuery = window.matchMedia("(max-width: 768px)");
-function handleTabletChange(e) {
-  if (e.matches) {
-    clicked.style.left = "15%";
-    computerChoice.style.left = "80%";
-    computer.style.left= "93%"
-  } else {
-    clicked.style.left = "28%";
-    computerChoice.style.left = "64%";
-    computer.style.left= "64%"
-  }
-}
-mediaQuery.addListener(handleTabletChange);
-handleTabletChange(mediaQuery);
